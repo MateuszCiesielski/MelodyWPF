@@ -1,0 +1,63 @@
+﻿<Window x:Class="JakaToMelodia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/koniec_tlo.png" />
+        </Grid.Background>
+        <Canvas x:Name="Menu" Height="571" Margin="0,0,-0.4,0" Visibility="Visible" >
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/menu.png" />
+            </Canvas.Background>
+            <TextBlock Canvas.Left="178" TextWrapping="Wrap" Text="Jaka to melodia?" Canvas.Top="23" Height="84" Width="452" FontSize="60"/>
+            <Button x:Name="Start" Content="Start" Canvas.Top="242" Width="127" Canvas.Left="323" Height="61" Click="Start_Click"/>
+            <Button x:Name="Wyjdź" Content="Wyjdź" Canvas.Left="323" Canvas.Top="308" Width="127" Height="63" Click="Wyjdź_Click"/>
+        </Canvas>
+        <Canvas x:Name="Poziom" Height="571" Margin="0,0,-0.4,0" Visibility="Hidden">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/poziom.png" />
+            </Canvas.Background>
+            <TextBlock Canvas.Left="228" TextWrapping="Wrap" Text="Poziom trudności" Canvas.Top="50" Height="54" Width="321" FontSize="40"/>
+            <Button x:Name="Łatwy" Content="Łatwy (25 sek)" Canvas.Top="159" Width="127" Canvas.Left="323" Height="61" Click="Poziom_Click"/>
+            <Button x:Name="Średni" Content="Średni (20 sek)" Canvas.Left="324" Canvas.Top="225" Width="127" Height="63" Click="Poziom_Click"/>
+            <Button x:Name="Trudny" Content="Trudny (15 sek)" Canvas.Top="293" Width="127" Canvas.Left="324" Height="61" Click="Poziom_Click"/>
+            <Button x:Name="DoMenu" Content="MENU" Canvas.Left="324" Canvas.Top="387" Width="127" Height="62" Click="KoniecButton_Click"/>
+        </Canvas>
+        <Canvas x:Name="Gra" Height="571" Margin="0,0,-0.4,0" Visibility="Hidden">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/gra.png" />
+            </Canvas.Background>
+            <Button x:Name="Odp1" Canvas.Left="292" Canvas.Top="148" Width="215" Height="65" Click="Odp_Click"/>
+            <Button x:Name="Odp2" Canvas.Left="292" Canvas.Top="218" Width="215" Height="65" Click="Odp_Click"/>
+            <Button x:Name="Odp3" Canvas.Left="292" Canvas.Top="288" Width="215" Height="65" Click="Odp_Click"/>
+            <Button x:Name="Odp4" Canvas.Left="292" Canvas.Top="358" Width="215" Height="65" Click="Odp_Click"/>
+            <TextBlock Canvas.Left="551" TextWrapping="Wrap" Text="CZAS:" Canvas.Top="26" Height="45" Width="91" FontSize="30"/>
+            <TextBlock Canvas.Left="551" TextWrapping="Wrap" Text="WYNIK:" Canvas.Top="76" Height="47" Width="104" FontSize="30"/>
+            <TextBlock x:Name="Czas" Canvas.Left="667" TextWrapping="Wrap" Canvas.Top="26" Width="58" Height="45" FontSize="30"/>
+            <TextBlock x:Name="Wynik" Canvas.Left="667" TextWrapping="Wrap" Canvas.Top="76" Width="58" Height="47" FontSize="30"/>
+            <TextBlock Canvas.Left="551" TextWrapping="Wrap" Text="utwór:" Canvas.Top="482" Height="47" Width="91" FontSize="30"/>
+            <TextBlock x:Name="NrUtworu" Canvas.Left="647" TextWrapping="Wrap" Canvas.Top="482" Width="56" Height="46" FontSize="30"/>
+            <TextBlock Canvas.Left="708" TextWrapping="Wrap" Text="/10" Canvas.Top="481" Height="47" Width="52" FontSize="30"/>
+        </Canvas>
+        <Canvas x:Name="Komunikat" Margin="167,123,167,123" Visibility="Hidden">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/komunikat.png" />
+            </Canvas.Background>
+            <TextBlock x:Name="KomunikatDobrze" Canvas.Left="124" TextWrapping="Wrap" Text=" Brawo!!!" Canvas.Top="117" Height="76" Width="210" FontSize="50" Visibility="Hidden" Background="Green"/>
+            <TextBlock x:Name="KomunikatŹle" Canvas.Left="62" TextWrapping="Wrap" Text=" Niestety, źle :c" Canvas.Top="117" Height="76" Width="343" FontSize="50" Visibility="Hidden" Background="Red"/>
+            <Button x:Name="KomunikatButton" Content="DALEJ!" Canvas.Left="124" Canvas.Top="237" Width="210" Click="KomunikatButton_Click" Height="57"/>
+        </Canvas>
+        <Canvas x:Name="Koniec" Margin="167,123,167,123" Visibility="Hidden">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/koniec.png" />
+            </Canvas.Background>
+            <TextBlock x:Name="KoniecText" Canvas.Left="46" TextWrapping="Wrap" Canvas.Top="41" Height="76" Width="360" FontSize="50" Visibility="Visible" Background="DarkCyan"/>
+            <Button x:Name="KoniecButton" Content="MENU GŁÓWNE" Canvas.Left="46" Canvas.Top="278" Width="360" Click="KoniecButton_Click" Height="37"/>
+            <TextBlock Canvas.Left="46" TextWrapping="Wrap" Text="WYNIK: " Canvas.Top="137" FontSize="40"/>
+            <TextBlock x:Name="KoniecWynik" Canvas.Left="210" TextWrapping="Wrap" Canvas.Top="137" FontSize="40"/>
+            <TextBlock Canvas.Left="288" TextWrapping="Wrap" Text="/ 10" Canvas.Top="137" FontSize="40"/>
+            <TextBlock x:Name="KoniecPozostałyCzas" Canvas.Left="46" TextWrapping="Wrap" Canvas.Top="195" FontSize="40"/>
+        </Canvas>
+    </Grid>
+</Window>
